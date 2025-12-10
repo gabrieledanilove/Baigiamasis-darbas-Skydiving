@@ -1,0 +1,2 @@
+Tai sportas ir laisvalaikio veikla, kai žmogus iššoka iš orlaivio ar kitos platformos ir laisvai krenta, o tada išskleidžia parašiutą, kad saugiai nusileistų.​
+Šiuolaikinis parašiutizmas apima laisvąjį kritimą, skrydį po kupolu, tikslaus nusileidimo, formacijų ir kitų disciplinų šuolius.

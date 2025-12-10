@@ -1,0 +1,1 @@
+Norint tapti parašiutininku, reikia pradėti nuo bazinių mokymų (pvz., AFF programos) parašiutizmo klube, o vėliau rinkti šuolius, žinias ir licencijas pagal federacijos ar USPA reikalavimus.
