@@ -1,0 +1,2 @@
+A complete sport parachute system usually contains a main canopy, a reserve canopy and an automatic activation device (AAD), all packed in a single container (rig) worn on the back.
+The system also includes risers, lines, a pilot chute (small “throw‑out” parachute used to deploy the main canopy), handles for main and reserve deployment, and altitude‑measuring instruments.

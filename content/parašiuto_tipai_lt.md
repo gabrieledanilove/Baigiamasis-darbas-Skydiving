@@ -1,0 +1,2 @@
+Šiuolaikiniai sportiniai kupolai dažniausiai yra stačiakampiai (sparno tipo) ram-air parašiutai, kurie pripučiami oro srautu ir veikia kaip sklandytuvo sparnas.​
+Studentams ir tandemo šuoliams naudojami didesni, stabilesni kupolai, o patyrę šuolininkai kartais renkasi mažesnio ploto ir spartesnius kupolus, kurie reikalauja daugiau įgūdžių.

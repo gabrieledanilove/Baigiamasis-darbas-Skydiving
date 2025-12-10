@@ -1,0 +1,2 @@
+A first license (often called an A license) usually requires around 25 jumps plus a checklist of basic skills.
+Higher licenses (B, C, D) require increasing numbers of jumps and freefall time, for example 50+ jumps for B, 200+ for C and 500+ for D, as well as additional tasks like more advanced canopy work or formation skydiving.

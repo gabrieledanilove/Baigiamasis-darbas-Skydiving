@@ -1,0 +1,2 @@
+Mažesniuose klubuose dažnas darbinis orlaivis yra Cessna 182 – vienmotoris lėktuvas, keliantis apie 4 šuolininkus ir dažniausiai šokama iš maždaug 3000 m (~10 000 ft).​
+Kai kur Lietuvoje naudojamas ir didesnis AN-2, o pasaulyje populiarūs Grand Caravan, King Air, Skyvan ar CASA 212, leidžiantys vežti dideles grupes ir šokti iš panašių arba didesnių aukščių.

@@ -1,0 +1,6 @@
+Lietuvoje parašiutizmo mokymus organizuoja įvairūs klubai, tokie kaip: Vilniaus Skydiving Club, Šiaulių parašiutininkų klubas, Pociūnai, Klaipėdos parašiutininkų klubas ir Marijampolės aeroklubas, siūlantys tandemo ir AFF programas.​
+Tipiniai reikalavimai: minimalus amžius (dažnai nuo ~14 m. su tėvų sutikimu, nuo 18 m. savarankiškai), svorio ribos (apie 40–120 kg), sveikatos deklaracija ir pasirašoma atsakomybės sutartis.
+AFF arba panašios programos intensyviai mokantis gali būti įvykdytos per kelias dienas ar savaitgalius, tačiau realiai progresas priklauso nuo oro sąlygų, klubo grafiko ir asmens pasiruošimo.​
+Po bazinės programos dar reikia surinkti reikiamą šuolių ir įgūdžių skaičių, kad gautum pirmąją A licenciją, todėl visas kelias nuo „niekada nešokau“ iki pilnai savarankiško licencijuoto šuolininko paprastai užtrunka kelis mėnesius ir kelias dešimtis šuolių.
+Pirmam šuoliui svarbiausia: išsimiegoti, lengvai pavalgyti, apsirengti patogia sportine apranga ir avalyne, o visą specifinę įrangą (kombinezoną, akinius, šalmą, sistemą) paprastai suteikia klubas.​
+Reikia žinoti, kad šuolio diena gali prailgti dėl oro – kartais laukiama kelias valandas arba net perkeliamas šuolis, taip pat nereikia bijoti klausti instruktorių apie kiekvieną žingsnį, jei kas neaišku.

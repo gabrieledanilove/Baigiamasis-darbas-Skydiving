@@ -1,0 +1,2 @@
+Tarptautinėje praktikoje dažnai naudojama A, B, C, D licencijų sistema, kurią naudoja, pvz., USPA; A – pradedančiojo, D – pažangiausio lygio licencija.​
+Kiekvienai licencijai yra minimalūs šuolių ir laisvo kritimo laiko reikalavimai, taip pat teorinių žinių patikrinimai ir praktinių įgūdžių (kupolo valdymas, formacijos) vertinimai.​

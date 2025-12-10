@@ -1,0 +1,2 @@
+Modern sport parachutes are usually ram‑air, rectangular “wing‑type” canopies that inflate with air and fly like a small glider.
+Students and tandem jumpers typically use larger, more docile canopies, while experienced jumpers may choose smaller, faster parachutes that require higher skill.

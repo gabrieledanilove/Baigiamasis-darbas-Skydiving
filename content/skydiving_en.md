@@ -1,0 +1,2 @@
+Skydiving is a sport and leisure activity where a person exits an aircraft or other platform, experiences freefall, and then deploys a parachute to land safely.
+Modern skydiving includes freefall flying, canopy flight, accuracy landings, formation skydiving and other disciplines.

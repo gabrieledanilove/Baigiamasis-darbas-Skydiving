@@ -1,0 +1,2 @@
+Tandeminis šuolis: šuolis pritvirtintam prie instruktoriaus, minimalus teorinis pasiruošimas, dažniausiai pirmas susitikimas su parašiutizmu.​
+Studentų programos: pagreitinto laisvo kritimo (AFF) programa su keliais lygiais ir instruktoriais ore, arba statinės linijos (static line) šuoliai, kur kupolas išskleidžiamas automatiškai.

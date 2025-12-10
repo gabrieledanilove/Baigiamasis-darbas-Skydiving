@@ -1,0 +1,2 @@
+There are three main entry points: tandem jumps, AFF (Accelerated Freefall) courses, and static‑line or similar student programs.
+Tandem jumps are attached to an instructor with minimal training, while AFF and static‑line programs are designed to train independent skydivers through theory lessons and multiple jumps.

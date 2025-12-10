@@ -1,0 +1,2 @@
+Skydiving safety relies on standardized procedures, qualified instructors, appropriate equipment (including a reserve parachute and AAD) and respecting weather and wind limits.
+Students are trained to maintain altitude awareness, follow emergency procedures for canopy malfunctions, and never jump when tired, impaired or outside the club’s equipment and clothing rules.

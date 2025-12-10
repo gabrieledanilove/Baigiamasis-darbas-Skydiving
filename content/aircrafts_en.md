@@ -1,0 +1,2 @@
+Common skydiving aircraft include small single‑engine planes like the Cessna 182, which carry four or five jumpers at a time. In addition, some Lithuanian dropzones also use larger Antonov AN‑2 aircraft, which can take more skydivers per load and are popular for group jumps.
+Busier dropzones may use larger aircraft such as the Cessna Caravan, King Air, Skyvan or similar planes, which can carry bigger groups and climb efficiently to typical jump altitudes.

@@ -1,0 +1,2 @@
+Most clubs define weight limits (40-120 kg) and require that participants do not have serious heart, spine, neurological or other medical conditions that could make a jump unsafe.
+Some operators may ask for a doctor’s note or require the jumper to sign a health declaration and confirm understanding of the risks.

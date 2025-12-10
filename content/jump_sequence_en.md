@@ -1,0 +1,2 @@
+A skydive is typically divided into: ground preparation, aircraft climb, exit, freefall, parachute deployment, canopy flight and landing.
+Throughout the jump the student follows clear procedures: checks gear and altitude, performs planned tasks in freefall, deploys at the correct height and follows a landing pattern to the designated landing area.

@@ -1,0 +1,2 @@
+Most sport skydives are made from about 3 000–4 000 meters (around 10 000–13 000 feet) above ground.
+From those heights, freefall usually lasts several tens of seconds before opening the parachute at a pre‑planned deployment altitude.

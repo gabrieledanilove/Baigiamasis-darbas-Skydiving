@@ -1,0 +1,2 @@
+Saugą užtikrina keli lygiai: instruktorių parengimas, standartizuotos procedūros, privaloma įranga (atsarginis kupolas, AAD), medicininės anketos ir aiškios vėjo bei oro sąlygų ribos.​
+Studentams akcentuojama: aukščio kontrolė, aiškus veiksmų planas nesklandumams (nepilnas kupolo išsiskleidimas, pynė, asimetrija ir pan.), draudimas šokti pavargus, apsvaigus ar nesilaikant aprangos/šalmo reikalavimų.​

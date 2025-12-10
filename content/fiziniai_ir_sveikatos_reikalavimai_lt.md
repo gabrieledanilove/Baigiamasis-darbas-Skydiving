@@ -1,0 +1,2 @@
+Daugelis klubų nurodo svorio ribas (pvz., ~40–120 kg) ir reikalauja, kad žmogus neturėtų ryškių širdies, nugaros, epilepsijos ar kitų rimtų sveikatos problemų, galinčių kelti pavojų šuolio metu.​
+Kai kuriais atvejais gali būti prašoma šeimos gydytojo pažymos ar pasirašomos deklaracijos, kad žmogus žino apie rizikas ir patvirtina savo sveikatos būklę.

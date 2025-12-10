@@ -1,0 +1,2 @@
+Komerciniuose šuoliuose Lietuvoje dažnai taikomas minimalus amžius – apie 14 metų su tėvų sutikimu arba 18 metų savarankiškam sprendimui, tiksliai ribas nustato konkretus klubas.​
+Nepilnamečiams paprastai būtinas raštiškas tėvų/globėjų sutikimas, o visi dalyviai prieš šuolį pasirašo dokumentus dėl atsakomybės ir sąlygų, taip pat pildo sveikatos anketas.

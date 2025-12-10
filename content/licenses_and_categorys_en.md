@@ -1,0 +1,2 @@
+Many countries use a license system with levels such as A, B, C and D to describe a skydiver’s experience.
+Each license level requires a minimum number of jumps, minimum freefall time, demonstrated skills in freefall and under canopy, and a theoretical knowledge check or exam.

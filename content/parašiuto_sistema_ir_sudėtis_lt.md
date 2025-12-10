@@ -1,0 +1,2 @@
+Pilna sistema paprastai susideda iš pagrindinio kupolo, atsarginio kupolo ir automatinio atskleidimo prietaiso (AAD), įmontuotų į kuprinę, kuri tvirtinama prie kūno diržais.​
+Prie sistemos taip pat priklauso stabdymo parašiutėlis (pilot chute), stropų sistema, pakėlėjai, rankenos pagrindiniam ir atsarginiam kupolui bei aukštimatė (mechaninis ar elektroninis).

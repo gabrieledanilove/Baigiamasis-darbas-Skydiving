@@ -1,0 +1,2 @@
+Dauguma sportinių šuolių vyksta maždaug nuo 3000 iki 4000 m (apie 10 000–13 000 ft), kas suteikia keliasdešimt sekundžių laisvo kritimo.​
+Yra ir žemesnių „hop’n’pop“ (~1000–1500 m) šuolių, kai kupolas išskleidžiamas beveik iškart, tačiau tokius šuolius jau vykdo šiek tiek patirties turintys parašiutininkai.

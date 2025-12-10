@@ -1,0 +1,2 @@
+Operators in Lithuania usually set a minimum age of around 14 years for training and tandem jumps, but in that case written consent from parents or legal guardians is required. From the age of 18, a person is considered responsible for themselves and can sign all documents and assume full responsibility without parental consent.
+All jumpers must sign documents that describe responsibilities, risks, and the conditions under which the jump will take place.

@@ -1,0 +1,2 @@
+An AFF program is a multi‑level course where each level combines ground training and at least one jump with specific tasks.
+In early levels the student exits with one or two instructors, learning body position, altitude awareness, deployment and canopy control, then progresses to more advanced maneuvers and landings.

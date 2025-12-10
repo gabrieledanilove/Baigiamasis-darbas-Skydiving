@@ -1,0 +1,2 @@
+Pirmas žingsnis – išbandyti tandeminį šuolį arba statinės linijos / AFF mokomąjį šuolį su instruktoriumi, kad suprastum, ar ši veikla tau tinka.​
+Toliau einama į struktūrizuotą kursą (pvz., AFF 7 lygių programą), po kurio tampama savarankišku pradedančiuoju šuolininku ir galima rinkti šuolius licencijai.​

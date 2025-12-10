@@ -1,0 +1,2 @@
+Šuolis susideda iš pasiruošimo ant žemės, pakilimo lėktuvu iki reikiamo aukščio, išėjimo iš orlaivio, laisvo kritimo, parašiuto išskleidimo, skrydžio po kupolu ir nusileidimo zonoje.​
+Studentai ir pradedantieji visose fazėse seka aiškias instrukcijas: stebi aukštį, atlieka veiksmo sekas (pvz., patikrinimai, išskleidimo procedūra), vykdo atsarginio varianto veiksmus, jei kas nors nepavyksta.

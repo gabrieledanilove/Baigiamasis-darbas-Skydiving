@@ -1,0 +1,2 @@
+Lietuvos AFF programą sudaro 7 lygiai, kiekviename yra teorija ir šuolis, o progresas priklauso ne nuo šuolių skaičiaus, o nuo to, ar įvykdai to lygio užduotis.​
+Pradiniuose lygiuose šokama su dviem instruktoriais, mokomasi stabilaus kūno padėties, aukščio kontrolės, kupolo išskleidimo ir nusileidimo, vėlesniuose – figūrų, posūkių, slankiojimo ir tikslaus nusileidimo. Toliau šuolis vyksta su vienu instruktoriumi, o finalinis šuolis turi būti atliekamas individualiai.

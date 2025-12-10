@@ -1,0 +1,2 @@
+In Lithuania, skydiving courses are provided by local clubs: Vilnius, Šiauliai, Pociūnai, Klaipėda and Marijampolė that offer tandem and student programs.
+Typical requirements include a minimum age, body‑weight limits, a basic health declaration and signing a waiver that explains the risks and the club’s terms.
