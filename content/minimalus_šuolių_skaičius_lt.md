@@ -1,2 +1,2 @@
-A licencija – mažiausiai apie 25 šuoliai ir tam tikri pagrindiniai įgūdžiai (saugos žinios, stabilus kritimas, kupolo valdymas, tikslus nusileidimas).​
+A licencija – 25 šuoliai ir tam tikri pagrindiniai įgūdžiai (saugos žinios, stabilus kritimas, kupolo valdymas, tikslus nusileidimas).​
 B, C, D licencijoms reikia vis daugiau šuolių ir laisvo kritimo laiko: B – nuo ~50 šuolių, C – nuo ~200, D – nuo ~500 ir kelių valandų laisvo kritimo.
