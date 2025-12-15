@@ -1,42 +1,140 @@
-# AFF Skydiving Assistant
+# 🪂 AFF Skydiving Assistant
 
-Interaktyvus dirbtinio intelekto asistentas apie parašiutizmą ir AFF (Accelerated Freefall) mokymus, veikiantis lietuvių ir anglų kalbomis. [web:654]
+AI-powered assistant for AFF (Accelerated Free Fall) skydiving training with RAG knowledge base, real-time weather data, and safety features.
 
-## Funkcijos
+## 🎯 Features
 
-- Atsako į klausimus apie parašiutizmą ir AFF mokymus (teorija, taisyklės, įranga). [web:657]
-- Dirba lietuvių ir anglų kalbomis, atpažįsta kalbą automatiškai.
-- Vartotojo sąsaja naršyklėje (tekstiniai pranešimai ir balso įvestis / išvestis).
-- Užklausos keliauja per n8n workflow į LLM API (OpenAI/OpenRouter). [web:666]
-- Naudojami webhook’ai ir HTTP užklausos tarp frontendo ir n8n. [web:661]
+### 🤖 AI Capabilities
+- **Bilingual Support**: Automatically detects and responds in Lithuanian or English
+- **RAG Knowledge Base**: Pinecone vector store with AFF training rules and procedures
+- **Real-time Weather**: Open-Meteo API integration for jump safety assessment
+- **Image Analysis**: GPT-4o Vision for weather condition analysis from photos
+- **Human-in-the-Loop**: Critical safety questions require human approval
 
-## Technologijos
+### 🛠️ Technical Stack
+- **Platform**: n8n workflow automation
+- **AI Model**: OpenAI GPT-4o-mini
+- **Vector DB**: Pinecone (email-agent-database index)
+- **Storage**: Google Sheets (conversation logging)
+- **API**: Open-Meteo (weather data)
+- **Interface**: Webhook + HTML frontend
 
-- Frontend: paprastas HTML / CSS / JavaScript puslapis.
-- Backend orkestracija: n8n workflow (webhook, funkcijų, LLM ir kitų įrankių node’ai). [web:666]
-- DI modelis: LLM API pasiekiamas per HTTP užklausas.
-- (Jei pridėsi) Vektorinė duomenų bazė / RAG žinioms apie parašiutizmą. [web:664]
+## 📊 Architecture
 
-## Kaip paleisti
+User (localhost) → Webhook → AI Agent → Response
+↓
+┌─────────┴─────────┐
+↓ ↓
+Pinecone RAG Weather API
+(AFF rules) (conditions)
+↓
+Critical Check → Human Approval
+↓
+Google Sheets (logging)
 
-1. **Frontend**
-   - Atsisiųsk repozitoriją:
-     ```
-     git clone https://github.com/TAVO_VARDAS/Baigiamasis-darbas-Skydiving.git
-     cd Baigiamasis-darbas-Skydiving
-     ```
-   - Paleisk statinį serverį (pvz. VS Code Live Server arba `python -m http.server 8000`) ir atidaryk `index.html` naršyklėje. [web:655]
+## 🚀 Setup
 
-2. **n8n workflow**
-   - Importuok `aff-assistant-workflow.json` į savo n8n instancą. [web:666]
-   - Nustatyk aplinkos kintamuosius / credencials DI API raktui.
-   - Įsitikink, kad webhook URL sutampa su tuo, kuris naudojamas `index.html` faile. [web:661]
+### Prerequisites
+- n8n instance (cloud or self-hosted)
+- OpenAI API key
+- Pinecone account
+- Google Sheets API access
 
-## Naudojimas
+### Installation
 
-- Atidaryk puslapį naršyklėje, rašyk ar kalbėk lietuvių ir anglų kalba klausimus apie parašiutizmą.
-- Visi atsakymai yra tik informaciniai; prieš realius šuolius visada vadovaukitės instruktoriaus nurodymais ir oficialiomis taisyklėmis. [web:665]
+1. **Import Workflow**
+   - Download `aff-skydiving-assistant.json`
+   - In n8n: **Import from File** → Select JSON
 
-## Saugumo atsakomybės apribojimas
+2. **Configure Credentials**
+   - OpenAI API (2 connections needed)
+   - Pinecone API
+   - Google Sheets OAuth2
 
-Skydivingas yra aukštos rizikos veikla, galinti sukelti rimtus sužalojimus ar mirtį. Šis asistentas nepakeičia oficialių mokymų ir instruktoriaus nurodymų. [web:662]
+3. **Update Settings**
+   - Google Sheets Document ID: `1XbWV2qpe1Zn8dNzt2_G6_KvlAIysITKkTYzEN47Omcc`
+   - Sheet name: `Chat History`
+   - Webhook path: `7dddf591-4b3f-49fe-b74d-cf45738667f4`
+
+4. **Activate Workflow**
+   - Toggle workflow to **Active**
+
+## 💻 Usage
+
+### API Endpoint
+
+```javascript
+POST https://your-n8n-instance.com/webhook/7dddf591-4b3f-49fe-b74d-cf45738667f4
+
+// Request body
+{
+  "message": "Kokia yra minimali aukštis pirmiems šuoliams?",
+  "imageUrl": "https://example.com/sky-photo.jpg" // Optional
+}
+
+// Response
+{
+  "answer": "Minimalus aukštis AFF pirmiems šuoliams yra 3000 metrų..."
+}
+Frontend Example
+<!DOCTYPE html>
+<html>
+<body>
+  <input type="text" id="question" placeholder="Ask about AFF...">
+  <button onclick="ask()">Ask</button>
+  <div id="response"></div>
+
+  <script>
+    async function ask() {
+      const question = document.getElementById('question').value;
+      const response = await fetch('YOUR_WEBHOOK_URL', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: question })
+      });
+      const data = await response.json();
+      document.getElementById('response').innerText = data.answer;
+    }
+  </script>
+</body>
+</html>
+🔒 Safety Features
+Critical Question Detection
+Workflow automatically detects safety-critical keywords:
+English: emergency, accident, injury, danger, critical
+Lithuanian: pavojinga, nelaimė, sužeidimas, kritinė
+When detected:
+Workflow pauses
+Human approval required via webhook
+Response sent only after approval
+Weather Safety Thresholds
+Wind speed >7 m/s: Dangerous for beginners
+Automatic assessment based on real-time data
+📝 Data Logging
+All conversations are logged to Google Sheets with:
+Timestamp
+Question
+Answer
+Detected language
+🎓 Use Cases
+Training Questions: "What is the minimum altitude for first jumps?"
+Weather Checks: "Is it safe to jump today?"
+Image Analysis: Upload sky photo for weather assessment
+Safety Procedures: "What to do in emergency situation?"
+📈 Evaluation Criteria Met
+✅ LLM: AI Agent with tool orchestration
+✅ UI: Webhook + HTML interface
+✅ Tools: RAG + Google Sheets + HTTP + Webhooks + Human-in-the-loop 
+✅ Prompt Engineering: Specific task + zero-shot 
+✅ Other: Clean structure + bilingual 
+🤝 Contributing
+This is an educational project for AI workflow development course.
+📄 License
+MIT License - feel free to use for educational purposes.
+👤 Author
+[Gabriele Danilove] - [gabriele.kalvyte@gmail.com]
+🙏 Acknowledgments
+n8n community
+OpenAI GPT-4o
+Pinecone vector database
+Open-Meteo API
