@@ -34,7 +34,7 @@ Interaktyvus dirbtinio intelekto asistentas apie parašiutizmą ir AFF (Accelera
 
 ## Naudojimas
 
-- Atidaryk puslapį naršyklėje, rašyk ar kalbėk klausimus apie parašiutizmą.
+- Atidaryk puslapį naršyklėje, rašyk ar kalbėk lietuvių ir anglų kalba klausimus apie parašiutizmą.
 - Visi atsakymai yra tik informaciniai; prieš realius šuolius visada vadovaukitės instruktoriaus nurodymais ir oficialiomis taisyklėmis. [web:665]
 
 ## Saugumo atsakomybės apribojimas
