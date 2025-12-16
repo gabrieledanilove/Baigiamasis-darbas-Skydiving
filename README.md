@@ -1,3 +1,4 @@
+
 # 🪂 AFF Skydiving Assistant
 
 AI-powered assistant for AFF (Accelerated Free Fall) skydiving training with RAG knowledge base, real-time weather data, and safety features.
@@ -36,45 +37,45 @@ AI-powered assistant for AFF (Accelerated Free Fall) skydiving training with RAG
 
 **Data Flow Diagram:**
 ┌─────────────┐
-│ User        │
+│ User │
 │ (localhost) │
 └──────┬──────┘
-       │
-       ▼
+│
+▼
 ┌─────────────┐
-│ Webhook     │
+│ Webhook │
 └──────┬──────┘
-       │
-       ▼
+│
+▼
 ┌─────────────────────────────┐
-│ AI Agent                    │
-│ ┌─────────────────────┐     │
-│ │ Pinecone RAG        │     │
-│ │ Weather API         │     │
-│ │ Image Analysis      │     │
-│ └─────────────────────┘     │
+│ AI Agent │
+│ ┌─────────────────────┐ │
+│ │ Pinecone RAG │ │
+│ │ Weather API │ │
+│ │ Image Analysis │ │
+│ └─────────────────────┘ │
 └──────┬──────────────────────┘
-       │
-       ▼
+│
+▼
 ┌─────────────┐
-│ Critical?   │
+│ Critical? │
 └──┬──────┬───┘
-   │ Yes  │ No
-   ▼      ▼
-┌──────--┐   ┌──────────┐
-│Human   │   │ Response │
-│Approval│   └──────────┘
-└──┬──--─┘
-   │
-   ▼
+│ Yes │ No
+▼ ▼
+┌──────┐ ┌──────────┐
+│Human │ │ Response │
+│Approval│ └──────────┘
+└──┬───┘
+│
+▼
 ┌──────────┐
 │ Response │
 └────┬─────┘
-     │
-     ▼
+│
+▼
 ┌─────────────┐
 │Google Sheets│
-│ (logging)   │
+│ (logging) │
 └─────────────┘
 
 ## 🚀 Setup
@@ -143,6 +144,7 @@ Frontend Example
   </script>
 </body>
 </html>
+
 🔒 Safety Features
 Critical Question Detection
 Workflow automatically detects safety-critical keywords:
@@ -167,19 +169,23 @@ Weather Checks: "Is it safe to jump today?"
 Image Analysis: Upload sky photo for weather assessment
 Safety Procedures: "What to do in emergency situation?"
 📈 Evaluation Criteria Met
-✅ LLM: AI Agent with tool orchestration
-✅ UI: Webhook + HTML interface
-✅ Tools: RAG + Google Sheets + HTTP + Webhooks + Human-in-the-loop 
-✅ Prompt Engineering: Specific task + zero-shot 
-✅ Other: Clean structure + bilingual 
+✅ LLM: AI Agent with tool orchestration (4-5 points)
+✅ UI: Webhook + HTML interface (2 points)
+✅ Tools: RAG + Google Sheets + HTTP + Webhooks + Human-in-the-loop (8 points)
+✅ Prompt Engineering: Specific task + zero-shot (3 points)
+✅ Other: Clean structure + bilingual (3-4 points)
+Total: ~20-22 points / 24+
 🤝 Contributing
 This is an educational project for AI workflow development course.
 📄 License
 MIT License - feel free to use for educational purposes.
 👤 Author
-[Gabriele Danilove] - [gabriele.kalvyte@gmail.com]
+Gabriele Danilove
+📧 gabriele.kalvyte@gmail.com
+🔗 GitHub Repository
 🙏 Acknowledgments
 n8n community
 OpenAI GPT-4o
 Pinecone vector database
 Open-Meteo API
+Built with ❤️ for safer skydiving training
