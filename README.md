@@ -21,16 +21,61 @@ AI-powered assistant for AFF (Accelerated Free Fall) skydiving training with RAG
 
 ## 📊 Architecture
 
-User (localhost) → Webhook → AI Agent → Response
-↓
-┌─────────┴─────────┐
-↓ ↓
-Pinecone RAG Weather API
-(AFF rules) (conditions)
-↓
-Critical Check → Human Approval
-↓
-Google Sheets (logging)
+**Workflow Flow:**
+
+1. **User Input** (localhost) → Webhook receives request
+2. **AI Agent** processes with tools:
+   - 🗄️ **Pinecone RAG** - AFF training rules & procedures
+   - 🌤️ **Weather API** - Real-time jump conditions
+   - 🖼️ **Image Analysis** - Weather photo assessment (optional)
+3. **Safety Check**:
+   - ✅ Normal question → Direct response
+   - ⚠️ Critical question → Human approval required
+4. **Response** sent to user
+5. **Logging** - All conversations saved to Google Sheets
+
+**Data Flow Diagram:**
+┌─────────────┐
+│ User        │
+│ (localhost) │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│ Webhook     │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────────────────┐
+│ AI Agent                    │
+│ ┌─────────────────────┐     │
+│ │ Pinecone RAG        │     │
+│ │ Weather API         │     │
+│ │ Image Analysis      │     │
+│ └─────────────────────┘     │
+└──────┬──────────────────────┘
+       │
+       ▼
+┌─────────────┐
+│ Critical?   │
+└──┬──────┬───┘
+   │ Yes  │ No
+   ▼      ▼
+┌──────--┐   ┌──────────┐
+│Human   │   │ Response │
+│Approval│   └──────────┘
+└──┬──--─┘
+   │
+   ▼
+┌──────────┐
+│ Response │
+└────┬─────┘
+     │
+     ▼
+┌─────────────┐
+│Google Sheets│
+│ (logging)   │
+└─────────────┘
 
 ## 🚀 Setup
 
