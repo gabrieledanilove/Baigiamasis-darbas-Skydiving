@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AFF Skydiving Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #101429, #050711);
+      color: #f5f5f5;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* Parašiutų fono animacija */
+    .parachutes-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    
+    .parachute {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.15;
+      animation: fall linear infinite;
+    }
+    
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.15;
+      }
+      90% {
+        opacity: 0.15;
+      }
+      100% {
+        transform: translateY(calc(100vh + 100px)) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    .parachute:nth-child(1) { left: 5%; animation-duration: 15s; animation-delay: 0s; }
+    .parachute:nth-child(2) { left: 15%; animation-duration: 18s; animation-delay: 2s; }
+    .parachute:nth-child(3) { left: 25%; animation-duration: 20s; animation-delay: 4s; }
+    .parachute:nth-child(4) { left: 35%; animation-duration: 16s; animation-delay: 1s; }
+    .parachute:nth-child(5) { left: 45%; animation-duration: 19s; animation-delay: 3s; }
+    .parachute:nth-child(6) { left: 55%; animation-duration: 17s; animation-delay: 5s; }
+    .parachute:nth-child(7) { left: 65%; animation-duration: 21s; animation-delay: 2s; }
+    .parachute:nth-child(8) { left: 75%; animation-duration: 18s; animation-delay: 4s; }
+    .parachute:nth-child(9) { left: 85%; animation-duration: 16s; animation-delay: 1s; }
+    .parachute:nth-child(10) { left: 95%; animation-duration: 20s; animation-delay: 3s; }
+    .chat-container {
+      max-width: 900px;
+      height: 90vh;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      border-radius: 18px;
+      background: rgba(10, 14, 35, 0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    .chat-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-weight: 600;
+      font-size: 16px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(34, 197, 94, 0.15));
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .chat-header::before {
+      content: '🪂';
+      font-size: 32px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    .chat-header small {
+      display: block;
+      font-weight: 400;
+      font-size: 13px;
+      color: #d1d5db;
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+    .messages {
+      flex: 1;
+      padding: 16px 20px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .messages::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .message {
+      max-width: 70%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      word-wrap: break-word;
+      clear: both;
+    }
+    .message.user {
+      margin-left: auto;
+      background: #2563eb;
+      color: #e5f0ff;
+      float: right;
+    }
+    .message.bot {
+      margin-right: auto;
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.06);
+      float: left;
+    }
+    .speak-btn {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: #9ca3af;
+      font-size: 14px;
+      padding: 0;
+      margin-left: 4px;
+      flex-shrink: 0;
+    }
+    .speak-btn:hover {
+      color: #22c55e;
+    }
+    .input-row {
+      display: flex;
+      padding: 12px 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      gap: 8px;
+    }
+    .input-row input {
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: none;
+      outline: none;
+      background: #020617;
+      color: #f9fafb;
+      font-size: 14px;
+    }
+    .input-row button {
+      border: none;
+      border-radius: 999px;
+      padding: 0 16px;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .input-row .send-btn {
+      background: #22c55e;
+      color: #022c22;
+    }
+    .input-row .send-btn:disabled {
+      background: #374151;
+      color: #6b7280;
+      cursor: not-allowed;
+    }
+    .input-row #micBtn {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    .input-row #micBtn.recording {
+      background: #ef4444;
+      color: white;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .input-row button:hover {
+      opacity: 0.9;
+    }
+    .typing-indicator {
+      font-style: italic;
+      color: #9ca3af;
+    }
+    input:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    /* Gražesnis scrollbar */
+    .messages::-webkit-scrollbar {
+      width: 8px;
+    }
+    .messages::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+    .messages::-webkit-scrollbar-thumb {
+      background: rgba(34, 197, 94, 0.3);
+      border-radius: 10px;
+    }
+    .messages::-webkit-scrollbar-thumb:hover {
+      background: rgba(34, 197, 94, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <!-- Parašiutų fono animacija -->
+  <div class="parachutes-bg">
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+    <div class="parachute">🪂</div>
+  </div>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      <div style="flex: 1;">
+        <div style="font-size: 18px; margin-bottom: 8px;">AFF Skydiving Assistant</div>
+        <small style="display: block; line-height: 1.5;">
+          <strong style="color: #22c55e;">🇱🇹 LT:</strong> Rašykite lietuviškai – gausite atsakymą lietuviškai<br>
+          <strong style="color: #3b82f6;">🇬🇧 EN:</strong> Write in English – you'll get your answer in English<br>
+          <span style="opacity: 0.7; margin-top: 4px; display: inline-block;">💡 Use 🎙️ microphone or type your question | Informational only – follow your instructor</span>
+        </small>
+      </div>
+    </div>
+    <div id="messages" class="messages"></div>
+    <form id="chatForm" class="input-row">
+      <input id="question" autocomplete="off" placeholder="Type your question here..." />
+      <button id="micBtn" type="button">🎙️</button>
+      <button class="send-btn" type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    const WEBHOOK_URL = "https://gabrieledanilove.app.n8n.cloud/webhook/7dddf591-4b3f-49fe-b74d-cf45738667f4";
+
+    const messagesEl = document.getElementById('messages');
+    const formEl = document.getElementById('chatForm');
+    const inputEl = document.getElementById('question');
+    const micBtn = document.getElementById('micBtn');
+    const sendBtn = formEl.querySelector('.send-btn');
+
+    function addMessage(text, role) {
+      const bubble = document.createElement('div');
+      bubble.className = 'message ' + role;
+
+      const span = document.createElement('span');
+      span.textContent = text;
+      bubble.appendChild(span);
+
+      // tik botui pridedam 🔊
+      if (role === 'bot') {
+        const audioBtn = document.createElement('button');
+        audioBtn.type = 'button';
+        audioBtn.className = 'speak-btn';
+        audioBtn.textContent = '🔊';
+        audioBtn.addEventListener('click', () => speakText(text, detectLang(text)));
+        bubble.appendChild(audioBtn);
+      }
+
+      messagesEl.appendChild(bubble);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const question = inputEl.value.trim();
+      if (!question) return;
+
+      // Išjungiame įvesties lauką ir mygtuką siuntimo metu
+      inputEl.disabled = true;
+      sendBtn.disabled = true;
+
+      addMessage(question, 'user');
+      inputEl.value = '';
+
+      // Rodome "rašo..." indikatorių
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'message bot typing-indicator';
+      typingDiv.textContent = '...';
+      typingDiv.id = 'typing';
+      messagesEl.appendChild(typingDiv);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: question })
+        });
+
+        // Pašaliname "rašo..." indikatorių
+        const typingEl = document.getElementById('typing');
+        if (typingEl) typingEl.remove();
+
+        if (!res.ok) {
+          addMessage(`Klaida iš serverio (${res.status}), pabandykite dar kartą.`, 'bot');
+          return;
+        }
+
+        // Perskaitome atsakymą kaip tekstą
+        const responseText = await res.text();
+        console.log('Server response:', responseText);
+
+        if (!responseText || responseText.trim() === '') {
+          addMessage('Gautas tuščias atsakymas iš serverio.', 'bot');
+          return;
+        }
+
+        // Bandome parsinti kaip JSON
+        let data;
+        try {
+          data = JSON.parse(responseText);
+        } catch (jsonErr) {
+          console.error('JSON parse error:', jsonErr);
+          console.log('Response was:', responseText);
+          // Jei ne JSON, rodom kaip tekstą
+          addMessage(responseText, 'bot');
+          return;
+        }
+
+        // Ištraukiame atsakymą iš JSON
+        const answer = data.answer || data.response || data.message || data.output || JSON.stringify(data);
+        
+        if (!answer || answer.trim() === '') {
+          console.log('Empty answer in data:', data);
+          addMessage('Serveris grąžino tuščią atsakymą.', 'bot');
+          return;
+        }
+
+        addMessage(answer, 'bot');
+      } catch (err) {
+        console.error('Fetch error:', err);
+        const typingEl = document.getElementById('typing');
+        if (typingEl) typingEl.remove();
+        addMessage('Tinklo klaida, bandykite dar kartą.', 'bot');
+      } finally {
+        // Vėl įjungiame įvesties lauką ir mygtuką
+        inputEl.disabled = false;
+        sendBtn.disabled = false;
+        inputEl.focus();
+      }
+    }
+
+    formEl.addEventListener('submit', (e) => {
+      e.preventDefault();
+      sendMessage();
+    });
+
+    // -------- Text -> Voice --------
+    function detectLang(text) {
+      return /[ąčęėįšųūž]/i.test(text) ? 'lt-LT' : 'en-US';
+    }
+
+    function speakText(text, lang) {
+      if (!('speechSynthesis' in window)) {
+        alert('Jūsų naršyklė nepalaiko teksto skaitymo.');
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = lang;
+      
+      // Palaukiame, kol balso sąrašas bus užkrautas
+      const setVoice = () => {
+        const voices = window.speechSynthesis.getVoices();
+        const targetLangPrefix = lang.startsWith('lt') ? 'lt' : 'en';
+        const voice = voices.find(v => v.lang.startsWith(targetLangPrefix)) || voices[0];
+        if (voice) utterance.voice = voice;
+      };
+
+      if (window.speechSynthesis.getVoices().length > 0) {
+        setVoice();
+      } else {
+        window.speechSynthesis.addEventListener('voiceschanged', setVoice, { once: true });
+      }
+
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // -------- Voice -> Text --------
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition = null;
+
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.addEventListener('result', (event) => {
+        const text = event.results[0][0].transcript;
+        inputEl.value = text;
+        sendMessage();
+      });
+    } else {
+      // jei naršyklė nepalaiko – paslepiam mic mygtuką
+      micBtn.style.display = 'none';
+    }
+
+    let isRecording = false;
+
+    if (recognition) {
+      micBtn.addEventListener('click', () => {
+        if (isRecording) {
+          recognition.stop();
+          micBtn.classList.remove('recording');
+          isRecording = false;
+        } else {
+          // Automatiškai aptinkame kalbą pagal puslapio turinį
+          const lastBotMessage = Array.from(messagesEl.querySelectorAll('.message.bot')).pop();
+          const lang = lastBotMessage ? detectLang(lastBotMessage.textContent) : 'en-US';
+          recognition.lang = lang;
+          recognition.start();
+          micBtn.classList.add('recording');
+          isRecording = true;
+        }
+      });
+
+      recognition.addEventListener('end', () => {
+        micBtn.classList.remove('recording');
+        isRecording = false;
+      });
+
+      recognition.addEventListener('error', (event) => {
+        console.error('Speech recognition error:', event.error);
+        micBtn.classList.remove('recording');
+        isRecording = false;
+        if (event.error !== 'no-speech' && event.error !== 'aborted') {
+          addMessage('Nepavyko atpažinti balso. Bandykite dar kartą.', 'bot');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
