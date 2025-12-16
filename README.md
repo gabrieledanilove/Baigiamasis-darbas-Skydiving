@@ -144,7 +144,7 @@ Frontend Example
   </script>
 </body>
 </html>
-
+```
 ## 🔒 Safety Features
 
 ### Critical Question Detection
