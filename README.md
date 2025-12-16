@@ -145,47 +145,97 @@ Frontend Example
 </body>
 </html>
 
-🔒 Safety Features
-Critical Question Detection
-Workflow automatically detects safety-critical keywords:
-English: emergency, accident, injury, danger, critical
-Lithuanian: pavojinga, nelaimė, sužeidimas, kritinė
-When detected:
-Workflow pauses
-Human approval required via webhook
-Response sent only after approval
-Weather Safety Thresholds
-Wind speed >7 m/s: Dangerous for beginners
-Automatic assessment based on real-time data
-📝 Data Logging
-All conversations are logged to Google Sheets with:
-Timestamp
-Question
-Answer
-Detected language
-🎓 Use Cases
-Training Questions: "What is the minimum altitude for first jumps?"
-Weather Checks: "Is it safe to jump today?"
-Image Analysis: Upload sky photo for weather assessment
-Safety Procedures: "What to do in emergency situation?"
-📈 Evaluation Criteria Met
-✅ LLM: AI Agent with tool orchestration (4-5 points)
-✅ UI: Webhook + HTML interface (2 points)
-✅ Tools: RAG + Google Sheets + HTTP + Webhooks + Human-in-the-loop (8 points)
-✅ Prompt Engineering: Specific task + zero-shot (3 points)
-✅ Other: Clean structure + bilingual (3-4 points)
-Total: ~20-22 points / 24+
-🤝 Contributing
-This is an educational project for AI workflow development course.
-📄 License
-MIT License - feel free to use for educational purposes.
-👤 Author
-Gabriele Danilove
-📧 gabriele.kalvyte@gmail.com
-🔗 GitHub Repository
-🙏 Acknowledgments
-n8n community
-OpenAI GPT-4o
-Pinecone vector database
-Open-Meteo API
-Built with ❤️ for safer skydiving training
+## 🔒 Safety Features
+
+### Critical Question Detection
+
+The workflow automatically detects safety-critical keywords in AI responses.
+
+**Monitored keywords:**
+- English: emergency, accident, injury, danger, critical
+- Lithuanian: pavojinga, nelaimė, sužeidimas, kritinė
+
+**When critical keywords are detected:**
+1. Workflow execution pauses automatically
+2. Human approval is required via webhook
+3. Response is sent to user only after approval
+
+### Weather Safety Thresholds
+
+- Wind speed greater than 7 m/s is considered dangerous for beginners
+- Automatic safety assessment based on real-time weather data
+- AI provides recommendations based on current conditions
+
+## 📝 Data Logging
+
+All conversations are automatically logged to Google Sheets with the following information:
+
+- **Timestamp** - When the conversation occurred
+- **Question** - User's original question
+- **Answer** - AI-generated response
+- **Language** - Detected language (Lithuanian or English)
+
+This enables conversation analysis, quality control, and workflow improvement based on real usage patterns.
+
+## 🎓 Use Cases
+
+### Training Questions
+Example: "What is the minimum altitude for first jumps?"
+
+The AI retrieves information from the Pinecone knowledge base and provides accurate answers based on AFF training materials.
+
+### Weather Checks
+Example: "Is it safe to jump today?"
+
+The AI calls the Weather API to get current conditions and evaluates safety based on wind speed, temperature, and other factors.
+
+### Image Analysis
+Example: Upload a sky photo URL
+
+The AI analyzes weather conditions from the image using GPT-4o Vision and combines visual analysis with real-time API data.
+
+### Safety Procedures
+Example: "What to do in an emergency situation?"
+
+Critical safety questions trigger the Human-in-the-Loop approval process to ensure accurate, verified information.
+
+## 📈 Evaluation Criteria Met
+
+This project fulfills the following course requirements:
+
+- ✅ **LLM** - AI Agent with tool orchestration (4-5 points)
+- ✅ **UI** - Webhook plus HTML interface (2 points)
+- ✅ **Tools** - RAG, Google Sheets, HTTP, Webhooks, Human-in-the-loop (8 points)
+- ✅ **Prompt Engineering** - Specific task with zero-shot prompting (3 points)
+- ✅ **Other** - Clean structure and bilingual support (3-4 points)
+
+**Total Score: approximately 20-22 points out of 24+**
+
+## 🤝 Contributing
+
+This is an educational project developed for an AI workflow development course. Contributions, suggestions, and feedback are welcome.
+
+## 📄 License
+
+MIT License - Free to use for educational purposes.
+
+## 👤 Author
+
+**Gabriele Danilove**
+
+📧 Email: gabriele.kalvyte@gmail.com
+
+🔗 GitHub: [github.com/your-username/aff-skydiving-assistant](https://github.com/your-username/aff-skydiving-assistant)
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+
+- **n8n community** - For the excellent workflow automation platform
+- **OpenAI** - For GPT-4o-mini and embedding models
+- **Pinecone** - For vector database infrastructure
+- **Open-Meteo** - For free weather API access
+
+---
+
+**Built with ❤️ for safer skydiving training**
